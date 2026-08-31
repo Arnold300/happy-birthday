@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PIN Hash Generator</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 480px; margin: 60px auto; padding: 0 20px; color: #1B1F3B; }
+  h1 { font-size: 1.3rem; }
+  input { font-size: 1.2rem; padding: 10px; width: 100%; box-sizing: border-box; margin: 12px 0; border: 2px solid #D4A62A; border-radius: 8px; }
+  pre { background: #F6EFE1; padding: 14px; border-radius: 8px; word-break: break-all; font-size: 0.85rem; }
+  p.help { color: #555; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+  <h1>PIN Hash Generator</h1>
+  <p class="help">Type the PIN you want to use for the birthday site. Copy the resulting hash into <code>config.js</code> as <code>pinHash</code>. This page runs entirely in your browser — nothing is sent anywhere.</p>
+  <input id="pin" type="text" placeholder="Type your PIN here" autocomplete="off">
+  <p><strong>Hash:</strong></p>
+  <pre id="output">…</pre>
+
+  <script>
+    const input = document.getElementById('pin');
+    const output = document.getElementById('output');
+
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+    }
+
+    input.addEventListener('input', async () => {
+      if (!input.value) { output.textContent = '…'; return; }
+      output.textContent = await sha256(input.value);
+    });
+  </script>
+</body>
+</html>
