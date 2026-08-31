@@ -216,7 +216,7 @@ const CONFIG = {
   congratsEyebrow: "Congratulations to my Smartie",
   sudokuWinMessage: "You've now unlocked your birthday message",
   congratsButtonLabel: "Reveal Card",
-  congratsButtonDelayMs: 3000,
+  congratsButtonDelayMs: 8000,
 
   // ---------------------------------------------------------------------
   // 4) THE REVEAL — your message + the photo collage
