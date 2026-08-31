@@ -34,9 +34,9 @@ const CONFIG = {
   // ~3 seconds before resetting. "photo" is optional — path to an image
   // in /photos to show alongside the text. Leave it out for text-only.
   pinWrongTeases: [
-    { text: "so sad 😔" },
+    { text: "Come on try to rememeber" },
     { text: "ahh you can do better" },
-    { text: "nope, try again" },
+    { text: "Hint : Something i had never done before" },
     { text: "not even close" },
     { text: "the vault remains sealed" },
     // { text: "remember this?", photo: "photos/funny1.jpg" },
@@ -54,7 +54,7 @@ const CONFIG = {
   // seconds later so it doesn't sit on top of the burst. 8000ms keeps the
   // action feeling clear and unblocked.
   teaserPromptDelayMs: 8000,
-  teaserPromptText: "Would you fancy a round of fun and rapid questions?",
+  teaserPromptText: "Would you fancy a round of fun Questions? (Please ss your answers )",
 
   // Background mashup audio. Put your exported MP3 in /audio and point this
   // at the filename. Starts playing (looped, faded) the instant she taps
@@ -90,14 +90,14 @@ const CONFIG = {
     },
     {
       question: "Where would people find you if you were lost in a huge supermarket?",
-      options: ["The snack aisle", "At the exit cause you have to be home", "Dairy section", "Bhaji section"],
+      options: ["The snack aisle", "At the exit cause you have to be home", "Dairy section", "Vegetables section"],
     },
     {
       question: "Which outfit are you most likely to wear?",
       options: ["A dress", "A 15-year-old t-shirt and shorts", "Kim's clothes", "Clothes from Sahkari Bhandar"],
     },
     {
-      question: "Where is a great place to work according to you?",
+      question: "Where is 'great place to work' according to you?",
     },
     {
       question: "Why do you think you wouldn't survive the war?",
@@ -204,10 +204,10 @@ const CONFIG = {
   // ],
 
   sudokuTeases: [
-    { afterSeconds: 20, text: "too slow 🐢" },
-    { afterSeconds: 45, text: "the numbers aren't going to place themselves..." },
-    { afterSeconds: 70, text: "should I call a friend? 📞" },
-    { afterSeconds: 100, text: "genuinely impressed at this point (not in a good way)" },
+    { afterSeconds: 10, text: "Come on youre better bb 🐢" },
+    { afterSeconds: 30, text: "the numbers aren't going to place themselves..." },
+    { afterSeconds: 45, text: "Do you need help bb ? 📞" },
+    { afterSeconds: 100, text: " Come on Genius" },
     { afterSeconds: 140, text: "ok I believe in you. mostly." },
   ],
   // Shown on the congrats screen after she solves the sudoku, before a
